@@ -1,192 +1,76 @@
 .container
-    width: 100vw
-    min-weight: 100vw
-    max-width: 100vw
+    width: $fw
+    min-width: $fw
+    max-width: $fw
     height: auto
-    background: #ffffff
-    color: #202020
-    font:
-        family: monospace
-        size: 1em
-        weight: 300
-    @include flex
-    @include flexRow
-    // @media (max-width: 600px)
-        // @include flexColumn
+    min-height: $fh
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    overflow: hidden
+    background-color: #fff
 
-    .menu-wrapper
-        @include flex
-        @include flexColumn
-        @media (max-width: 600px)
-            max-width: 100vw
-            height: 200px
-            background: #ffffff
-        z-index: 10
+    .navigation
+        width: 15vw
+        height: $fh
+        min-height: $fh
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin: 0
+        padding: 2vh 1vw
+        z-index: 999
         position: fixed
         top: 0
         left: 0
-        width: 100%
-        max-width: 260px
-        height: 100vh
-        box-shadow: 1px 0 1px #cbcbcb
-        
-        nav.navigation
-            @include flex
-            @include flexColumn
-            @media (max-width: 600px)
-                @include flexRow
-                @include justifySpaceBetween
-                width: 100%
-                max-width: 80vw
-            width: 100%
-            max-width: 200px
-            margin: 10vh auto
-            @include alignRight
-    
-            .nav-item
-                padding: 10px
-                @media (max-width: 600px)
-                    padding: 0
-                a
-                    padding: 5px
-                    text-decoration: none
-                    color: #2b2b2b
-                    @include transition(all, 300ms, ease, 100ms)
-                    &:hover, &:active, &:focus
-                        outline: none
-                        box-shadow: 0 0 5px #eaeaea
-                        border-right: 10px solid #00ff88
-                        color: #979797
-        
-        a.enquiry
-            @include flex
-            @include flexRow
-            @include alignCenter
-            text-decoration: none
-            padding: 5px 10px
-            position: absolute
-            left: 50%
-            bottom: 5vh
-            margin: 0 -65px 0 -65px
-            width: 100%
-            max-width: 130px
-            text-align: center
-            color: #2b2b2b
-            border: 1px solid #cdcdcd
-            cursor: pointer
-            span.symbol
-                font-size: 2em
-                margin: 0 10px 0 0
-            @include transition(all, 300ms, ease, 100ms)
-            &:hover, &:focus, &:active
-                background: #2b2b2b
-                color: #ffffff
-                box-shadow: 0px 0px 7px #cdcdcd
+        bottom: 0
+        background-color: $white
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1)
 
-    .content-wrapper
-        @media (max-width: 600px)
+        nav.main-navigation
             width: 100%
-            max-width: 100vw
-            position: relative
-            left: 0
-            top: 200px
-            z-index: 5
-            position: relative
-            top: 0
-            left: 260px
-            width: 100%
-            max-width: calc(100% - 260px)
-            height: auto
-            background: #f0f0f0
-            .simple-wrapper
-                padding: 0 0 0 5vw
-                height: auto
-                width: 100%
-                max-width: 100vw
-                h1.heading
-                    color: #a0a0a0
-                    letter-spacing: 5vw
-                    text-shadow: 2px 2px 4px #d0d0d0
-                    border-bottom: 1px solid #d0d0d0
-                    padding: 5vh
-                    margin: 0
-                    font:
-                        family: monospace
-                        weight: 400
-                        size: 5vw
-    .notes-wrapper
-        ul.notes-list
-            @include flex
-            @include flexWrap
-            @include justifySpaceAround
-            list-style-type: none
-            width: 100%
-            max-width: 60vw
-            padding: 5vh 2vw
-            margin: 0
-            li.note
-                cursor: pointer
-                width: 100%
-                min-width: 300px
-                max-width: 300px
-                height: 400px
-                margin: 5vh 1vw
-                padding: 0
-                background: #ffffff
-                box-shadow: 1px 1px 7px #d4d4d4
-                @include transition(all, 200ms, ease, 100ms)
-                h4.note-heading
-                    padding: 0
-                    margin: 0
-                    text-align: center
-                    line-height: 400px
-                    font:
-                        family: monospace
-                        weight: 400
-                        size: 1.5em
-                &:hover, &:focus
-                    transform: rotate(-5deg)
-                    box-shadow: 4px 4px 10px #d4d4d4
+            text-align: right
+            font:
+                family: monospace
+                size: 1.3em
 
-    .enquiry-wrapper
-        width: 100%
-        max-width: 65vw
-        margin: 5vh auto 5vh auto
-        padding: 5vw
-        background: #ffffff
-        border-radius: 10px
-        box-shadow: 2px 2px 4px #d4d4d4
-        .en-form
-            @include flex
-            @include flexColumn
-            @include alignCenter
-            .en
-                margin: 1vh auto 1vh auto
-                width: 100%
-                max-width: 50vw
-                height: 100%
-                min-height: 6vh
-                padding: 5px
-                font:
-                    family: monospace
-                    weight: 300
-                    size: 1.1em
-            .en-input:hover, .en-input:focus, .en-input:active,
-            .en-text:hover, .en-text:focus, .en-text:active
-                outline: none
-                border: 1px solid #00ff88
-                box-shadow: 1px 1px 1px #cdcdcd
-            // .en-input
-            .en-text
-                min-height: 20vh
-                max-height: 30vh
-            
-            .en-button
-                border: 1px solid #cdcdcd
-                background: #ffffff
-                color: #2b2b2b
-                cursor: pointer
-                @include transition(all, 300ms, ease, 100ms)
-                &:hover, &:focus
-                    background: #2f2f2f
-                    color: #ffffff
+            ul#main-nav-list
+                list-style-type: none
+
+                li.nav-list-item
+                    margin: 0
+                    width: 100%
+                    a.nav-list-item-link
+                        display: block
+                        width: 100%
+                        padding: 1vh
+                        text-decoration: none
+                        color: $dark-grey
+                        transition: all 300ms ease-in-out
+                        &:hover, &:focus, &:active
+                            outline: none
+                            border-right: 15px solid rgb(94, 233, 133)
+                            box-shadow: 0 0 1px $bg-grey
+
+    .content
+        width: 85vw
+        height: $fh
+        min-height: $fh
+        margin: 0
+        padding: 5vh 5vw
+        overflow: scroll
+        background-color: $bg-grey
+
+        footer
+            display: block
+            padding: 1vh
+            width: 85vw
+            height: 5vh
+            position: fixed
+            bottom: 0
+            right: 0
+            left: 15vw
+            text-align: right
+            background-color: $dark-grey
