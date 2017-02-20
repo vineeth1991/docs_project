@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Docs
+        //- link(rel="icon", href="/assets/images/favicon.ico")
+        link(rel="stylesheet", href="styles/main.css")
+    body
+        .container
+            .menu-wrapper
+                nav.navigation
+                    .nav-item
+                        a(href="#notes") notes 
+                    .nav-item
+                        a(href="#works") works 
+                    .nav-item
+                        a(href="#connect") connect  
+                    .nav-item
+                        a(href="#info") about me        
+    
+                a.enquiry(href="#emailme")
+                    span.symbol &#9786;
+                    span.text  email me
+    
+            .content-wrapper
+                .notes-wrapper.simple-wrapper#notes
+                    h1.heading notes
+                    ul.notes-list
+                        li.note 
+                        h4.note-heading HTML5
+                        li.note 
+                        h4.note-heading CSS3
+                        li.note 
+                        h4.note-heading JavaScript
+                        li.note
+                        h4.note-heading PHP
+                        li.note
+                        h4.note-heading iOS Dev
+                        li.note
+                        h4.note-heading Build Tools
+                        li.note
+                        h4.note-heading DevOps
+                        li.note
+                        h4.note-heading UI Designing
+
+            .works-wrapper.simple-wrapper#works
+                h1.heading works
+            .connect-wrapper.simple-wrapper#connect
+                h1.heading connect
+            .info-wrapper.simple-wrapper#info
+                h1.heading info
+            .enquiry-wrapper.simple-wrapper#emailme
+                form.en-form
+                    input.en-input.en(type="text" placeholder="name")
+                    input.en-input.en(type="email", placeholder="email address")
+                    textarea.en-text.en(placeholder="Your message")
+                    button.en.en-button send
