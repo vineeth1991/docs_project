@@ -1,76 +1,120 @@
-.container
-    width: $fw
-    min-width: $fw
-    max-width: $fw
+body
+    width: 100vw
+    max-width: 100vw
+    min-width: 100vw
     height: auto
-    min-height: $fh
+    overflow-y: scroll
+    overflow-x: hidden
+header
+    background-color: rgba(0, 0, 0, 0)
+    width: 15vw
+    min-width: 15vw
+    max-width: 15vw
+    min-height: 100vh
+    max-height: 100vh
+    height: 100vh
+    position: fixed
+    left: 0
+    bottom: 0
+    top: 0
     display: flex
-    flex-direction: row
-    justify-content: space-between
+    flex-direction: column
+    justify-content: center
     align-items: center
-    overflow: hidden
-    background-color: #fff
+    text-align: right
+    font:
+        family: monospace
+        size: 1vw
 
-    .navigation
-        width: 15vw
-        height: $fh
-        min-height: $fh
+    nav#main-nav
         display: flex
         flex-direction: column
-        justify-content: center
-        align-items: center
-        margin: 0
-        padding: 2vh 1vw
-        z-index: 999
-        position: fixed
-        top: 0
-        left: 0
-        bottom: 0
-        background-color: $white
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1)
 
-        nav.main-navigation
-            width: 100%
-            text-align: right
-            font:
-                family: monospace
-                size: 1.3em
+        .nav-item
+            margin: 2vh 0
+            a.nav-link
+                outline: none
+                text-decoration: none
+                padding: 0.75vh 0.5vw
+                border: 1px solid rgba(0, 0, 0, 0)
+                color: rgb(23, 23, 23)
+                transition: all 300ms ease-in-out
+                &:hover, &:active, &:focus
+                    border-right: 1px solid rgb(101, 101, 101)
 
-            ul#main-nav-list
-                list-style-type: none
+    .email-cta
+        position: absolute
+        left: 4vw
+        bottom: 5vh
+        cursor: pointer
+        a.cta-link
+            text-decoration: none
+            color: rgb(40, 40, 40)
+            padding: 1vh 1vw
+            border: 1px solid rgb(108, 108, 108)
+            transition: all 300ms ease-in-out
+            &:hover, &:focus
+                background-color: rgb(31, 31, 31)
+                color: rgb(189, 189, 189)
+.content
+    width: 100%
+    min-height: 100vh
+    background-color: $bg-grey
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
 
-                li.nav-list-item
-                    margin: 0
-                    width: 100%
-                    a.nav-list-item-link
-                        display: block
-                        width: 100%
-                        padding: 1vh
-                        text-decoration: none
-                        color: $dark-grey
-                        transition: all 300ms ease-in-out
-                        &:hover, &:focus, &:active
-                            outline: none
-                            border-right: 15px solid rgb(94, 233, 133)
-                            box-shadow: 0 0 1px $bg-grey
-
-    .content
-        width: 85vw
-        height: $fh
-        min-height: $fh
-        margin: 0
-        padding: 5vh 5vw
-        overflow: scroll
-        background-color: $bg-grey
-
-        footer
+    article#main-article
+        width: 50%
+        margin: 5vh auto
+        span.section-heading
+            pointer-events: none
             display: block
-            padding: 1vh
-            width: 85vw
-            height: 5vh
-            position: fixed
-            bottom: 0
-            right: 0
-            left: 15vw
-            text-align: right
-            background-color: $dark-grey
+            padding: 1vh 0.75vw
+            text-decoration: underline
+            font:
+                family: sans-serif
+                weight: bold
+                size: 3vw
+        section#notes
+            width: 100%
+            display: flex
+            flex-direction: column
+            span.section-heading
+                color: rgb(57, 23, 129)
+            .notes-container
+                margin: 5vh auto
+                width: 100%
+                display: flex
+                flex-direction: row
+                justify-content: space-around
+                align-items: center
+                flex-wrap: wrap
+                a.note-link
+                    width: 20%
+                    margin: 2vh 1vw
+                    display: block
+                    text-decoration: none
+                    color: rgb(50, 50, 50)
+                    transition: all 300ms ease-in-out
+                    font:
+                        family: monospace
+                        size: 1.2em
+                    &:hover
+                        transform: rotate(-8deg)
+                    .note-link-struct
+                        width: 10vw
+                        height: 25vh
+                        background-color: #fff
+                        display: flex
+                        flex-direction: row
+                        justify-content: center
+                        align-items: center
+                        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25)
+        section#works
+            span.section-heading
+                color: rgb(240, 128, 65)
+        section#connect
+            span.section-heading
+                color: rgb(25, 125, 152)

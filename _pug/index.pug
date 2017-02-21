@@ -1,27 +1,68 @@
+//- notes mixin
+mixin note(title, href, id)
+    a(class="note-link", href=href, id=id)
+        .note-link-struct
+            span.note-title= title
+
+//- works mixin
+mixin work(title, href, id)
+    a(class="work-link", href=href, id=id)
+        .work-link-struct
+            span.work-title= title
+
 doctype html
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""><!--[endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang=""><!--[endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang=""><!--[endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""><!--<![endif]-->
 html(lang="en")
     head
         meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
         meta(name="description", content="A simple docs repository")
         meta(name="viewport", content="width=device-width, initial-scale=1")
         title Welcome to docs
         link(rel="icon", href="assets/icons/favicon.ico")
         link(rel="stylesheet", href="styles/main.css")
+        script(src="scripts/modernizr-2.8.3-respond-1.4.2.min.js")
     body
-        .container
-            .navigation
-                nav.main-navigation
-                    ul#main-nav-list
-                        li.nav-list-item
-                            a.nav-list-item-link(href="#notes") notes
-                        li.nav-list-item
-                            a.nav-list-item-link(href="#references") references
-                        li.nav-list-item
-                            a.nav-list-item-link(href="#works") works
-                        li.nav-list-item
-                            a.nav-list-item-link(href="#connect") connect
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-            .content
-                footer
-                    .email-cta
-                        a.mail-cta(href="mailto:vineeth1991@gmail.com") email me
+        header
+            nav#main-nav
+                .nav-item#item-notes
+                    a(class="nav-link", href="#notes") notes
+                .nav-item#item-works
+                    a(class="nav-link", href="#works") works
+                .nav-item#item-connect
+                    a(class="nav-link", href="#connect") connect
+            .email-cta
+                a(class="cta-link", href="mailto:vineeth1991@gmail.com") email-me
+        .content
+            article#main-article
+                section#notes
+                    span.section-heading notes
+                    .notes-container
+                        +note("HTML","#html","html")
+                        +note("CSS","#html","html")
+                        +note("Javascript","#html","html")
+                        +note("NodeJS","#html","html")
+                        +note("AngularJS","#html","html")
+                        +note("UI Design","#html","html")
+                        +note("Webflow","#html","html")
+                        +note("MongoDB","#html","html")
+                        +note("ExpressJS","#html","html")
+                        +note("ReactJS","#html","html")
+                        +note("PHP","#html","html")
+                        +note("Laravel","#html","html")
+                        +note("Zend","#html","html")
+                        +note("Composer","#html","html")
+                        +note("Web Design Basics","#html","html")
+                        +note("Gulp","#html","html")
+                section#works
+                    span.section-heading works
+                    
+                section#connect
+                    span.section-heading connect
